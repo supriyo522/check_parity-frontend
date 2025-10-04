@@ -1,0 +1,20 @@
+.container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+input {
+  padding: 8px;
+  margin-right: 10px;
+}
+
+button {
+  padding: 8px 15px;
+  cursor: pointer;
+}
+
+p {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+}
