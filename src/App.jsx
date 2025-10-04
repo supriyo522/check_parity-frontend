@@ -2,34 +2,32 @@ import React, { useState } from "react";
 import "./App.css";
 
 function App() {
-  const [value, setValue] = useState("");
-  const [result, setResult] = useState("");
+  const [number, setNumber] = useState("");
+  const [message, setMessage] = useState("");
 
-  const handleCheck = () => {
-    if (value.trim() === "" || isNaN(value)) {
-      setResult("Please enter a valid number");
+  const checkNumber = () => {
+    const num = Number(number);
+
+    if (isNaN(num)) {
+      setMessage("Not a valid number!");
+    } else if (num % 2 === 0) {
+      setMessage(`The number ${num} is even!`);
     } else {
-      const num = Number(value);
-      if (num % 2 === 0) {
-        setResult("Even");
-      } else {
-        setResult("Odd");
-      }
+      setMessage(`Oops, ${num} is odd!`);
     }
   };
 
   return (
-    <div className="container">
-      <h1>Check Even or Odd</h1>
+    <div style={{ textAlign: "center", marginTop: "50px" }}>
+      <h1>Even/Odd Checker</h1>
       <input
         type="text"
-        name="number"  // ✅ required by tests
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
+        value={number}
+        onChange={(e) => setNumber(e.target.value)}
         placeholder="Enter a number"
       />
-      <button onClick={handleCheck}>Check</button>
-      <p>{result}</p>
+      <button onClick={checkNumber}>Check</button>
+      <p>{message}</p>
     </div>
   );
 }
