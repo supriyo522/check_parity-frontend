@@ -22,8 +22,8 @@ function App() {
       <h1>Even/Odd Checker</h1>
       <input
         type="text"
-        name="number"      // 🔥 added so Cypress can find it
-        id="number"        // optional, for clarity
+        name="number"     
+        id="number"        
         value={number}
         onChange={(e) => setNumber(e.target.value)}
         placeholder="Enter a number"
